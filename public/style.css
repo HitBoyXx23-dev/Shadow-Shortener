@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
+
+body {
+  background: radial-gradient(circle at top, #050505, #000010 60%);
+  color: #d5b3ff;
+  font-family: 'Orbitron', sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.container {
+  text-align: center;
+  background: rgba(10, 0, 30, 0.6);
+  border: 1px solid #6b2cff;
+  box-shadow: 0 0 25px #7a00ff;
+  border-radius: 15px;
+  padding: 30px;
+  width: 90%;
+  max-width: 500px;
+}
+
+h1 {
+  color: #b380ff;
+  text-shadow: 0 0 10px #6a00ff;
+}
+
+.subtitle {
+  color: #8080ff;
+  font-size: 0.9em;
+}
+
+form {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+input {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #6b2cff;
+  background: #0a001f;
+  color: #fff;
+  outline: none;
+}
+
+button {
+  padding: 10px;
+  background: linear-gradient(90deg, #4b00ff, #7a00ff);
+  border: none;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: linear-gradient(90deg, #7a00ff, #4b00ff);
+  box-shadow: 0 0 10px #7a00ff;
+}
+
+#result {
+  margin-top: 25px;
+  background: #0a0020;
+  border-radius: 10px;
+  padding: 15px;
+  border: 1px solid #4b00ff;
+}
+
+#short-url {
+  color: #caaaff;
+  text-decoration: none;
+}
+
+#short-url:hover {
+  text-decoration: underline;
+}
+
+.hidden {
+  display: none;
+}
+
+footer {
+  margin-top: 30px;
+  color: #6f6fdf;
+  font-size: 0.8em;
+  text-shadow: 0 0 5px #3f00ff;
+}
