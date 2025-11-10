@@ -28,11 +28,6 @@ h1 {
   text-shadow: 0 0 10px #6a00ff;
 }
 
-.subtitle {
-  color: #8080ff;
-  font-size: 0.9em;
-}
-
 form {
   margin-top: 20px;
   display: flex;
@@ -40,7 +35,7 @@ form {
   gap: 15px;
 }
 
-input {
+input[type="url"], input[type="text"] {
   padding: 10px;
   border-radius: 8px;
   border: 1px solid #6b2cff;
@@ -65,25 +60,25 @@ button:hover {
   box-shadow: 0 0 10px #7a00ff;
 }
 
-#result {
-  margin-top: 25px;
-  background: #0a0020;
-  border-radius: 10px;
-  padding: 15px;
-  border: 1px solid #4b00ff;
-}
-
 #short-url {
-  color: #caaaff;
+  display: block;
+  margin-top: 20px;
+  font-size: 1.2em;
   text-decoration: none;
-}
-
-#short-url:hover {
-  text-decoration: underline;
+  color: #caaaff;
+  text-shadow: 0 0 5px #7a00ff;
 }
 
 .hidden {
   display: none;
+}
+
+.mode-select {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  font-size: 0.9em;
+  color: #aaa;
 }
 
 footer {
