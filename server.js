@@ -4,12 +4,15 @@ const fs = require("fs");
 
 const app = express();
 const PORT = process.env.PORT || 3000;
-const BASE_URL = process.env.BASE_URL || "https://shadow.ly";
 
+// 🌐 Your Render URL
+const BASE_URL = "https://shadow-shortener.onrender.com";
+
+// Persistent store
 const DATA_FILE = "./data.json";
 let urls = fs.existsSync(DATA_FILE) ? JSON.parse(fs.readFileSync(DATA_FILE)) : {};
 
-// Shadow-style words
+// Word lists for random names
 const adjectives = [
   "dark", "silent", "crimson", "shadow", "lunar", "void", "celestial", "fallen",
   "midnight", "abyssal", "arcane", "storm", "cosmic", "neon", "phantom", "glowing"
@@ -22,6 +25,7 @@ const nouns = [
 app.use(express.json());
 app.use(express.static(path.join(__dirname, "public")));
 
+// Generate random readable slugs like "shadow-veil"
 function generateSlug() {
   const adj = adjectives[Math.floor(Math.random() * adjectives.length)];
   const noun = nouns[Math.floor(Math.random() * nouns.length)];
@@ -30,6 +34,7 @@ function generateSlug() {
   return slug;
 }
 
+// POST /shorten → creates short link
 app.post("/shorten", (req, res) => {
   const { url, mode, customWord } = req.body;
 
@@ -47,12 +52,11 @@ app.post("/shorten", (req, res) => {
   res.json({ shortUrl: `${BASE_URL}/${slug}` });
 });
 
+// GET /:slug → redirects to original URL
 app.get("/:slug", (req, res) => {
   const target = urls[req.params.slug];
   if (target) return res.redirect(target);
   res.status(404).send("⚠️ Shadow link not found.");
 });
 
-app.listen(PORT, () =>
-  console.log(`🌑 Shadow Shortener running at ${BASE_URL} (port ${PORT})`)
-);
+app.listen(PORT, () => console.log(`🌑 Shadow Shortener running at ${BASE_URL} (port ${PORT})`));
