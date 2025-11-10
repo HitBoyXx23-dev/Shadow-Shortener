@@ -1,0 +1,14 @@
+{
+  "name": "shadow-shortener",
+  "version": "1.0.0",
+  "description": "A dark-themed URL shortener like Bitly made by HitBoy.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "author": "HitBoyXx23",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.21.0"
+  }
+}
